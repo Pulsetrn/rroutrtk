@@ -58,7 +58,8 @@ function VansList() {
               {filterType ? (
                 <button
                   className={
-                    "border-0 bg-[#FFF7ED] font-bold text-[#4D4D4D] text-[16px] cursor-pointer no-underline hover:underline transition-all hover:text-black"
+                    "border-0 bg-[#FFF7ED] font-bold text-[#4D4D4D] text-[16px] cursor-pointer" +
+                    " no-underline hover:underline transition-all hover:text-black"
                   }
                   onClick={() => setSearchParams({})}
                 >

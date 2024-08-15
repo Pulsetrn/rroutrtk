@@ -42,6 +42,7 @@ function Header() {
         >
           Vans
         </NavLink>
+        <Link to="/login"><img src="/User_circle.svg" alt=""/></Link>
       </div>
     </div>
   );

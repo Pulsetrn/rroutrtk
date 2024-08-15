@@ -22,6 +22,8 @@ import VansItemDetails from "./pages/HostPages/VansHostPages/VansItemDetails.tsx
 import VansItemPricing from "./pages/HostPages/VansHostPages/VansItemPricing.tsx";
 import VansItemPhotos from "./pages/HostPages/VansHostPages/VansItemPhotos.tsx";
 import ErrorPage from "./pages/ErrorPage.tsx";
+import LoginPage from "./pages/LoginPage.tsx";
+import RequireAuth from "./helpers/RequireAuth.tsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -29,9 +31,17 @@ const router = createBrowserRouter(
       <Route path={"*"} element={<ErrorPage />} />
       <Route index element={<HomePage />} />
       <Route path="about" element={<AboutPage />} />
+      <Route path="login" element={<LoginPage />} />
       <Route path="vans" element={<VansPage />} />
       <Route path="vans/:id" element={<VansItemPage />} />
-      <Route path="host" element={<HostPage />}>
+      <Route
+        path="host"
+        element={
+          <RequireAuth>
+            <HostPage />
+          </RequireAuth>
+        }
+      >
         <Route index element={<DashboardHostPage />} />
         <Route path="income" element={<IncomeHostPage />} />
         <Route path="vans" element={<VansHostPage />} />

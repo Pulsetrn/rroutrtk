@@ -13,7 +13,7 @@ function VansItemPage() {
     simple: "bg-[#E17654] text-white",
     rugged: "bg-[#115E59] text-[#FFEAD0]",
     luxury: "bg-[#161616] text-[#FFEAD0]",
-  };
+  } as const;
   type typesKeys = keyof typeof types;
 
   useEffect(() => {
@@ -67,7 +67,7 @@ function VansItemPage() {
             <img
               src={vansData?.imageUrl}
               alt=""
-              className={"rounded mt-10 max-w-[600px] max-h-[650px] bg-cover"}
+              className={"rounded mt-10 max-w-[600px] max-h-[650px] bg-cover shadow-xl"}
             />
             <div className={"flex-col flex mt-[80px] ml-3 box-border p-10"}>
               <div
@@ -82,7 +82,7 @@ function VansItemPage() {
               </div>
               <button
                 className={
-                  "min-w-[494px] min-h-[50px] bg-[#161616] border-0 hover:bg-[#E17654] hover:text-black duration-500 transition-all font-bold text-[16px] text-white hover:cursor-pointer self-center box-border p-[30px]"
+                  "min-w-[494px] min-h-[50px] bg-[#161616] border-0 hover:bg-[#E17654] hover:text-black duration-500 transition-all font-bold text-[16px] text-white hover:cursor-pointer self-center box-border p-[30px] rounded-[15px]"
                 }
               >
                 Rent this van

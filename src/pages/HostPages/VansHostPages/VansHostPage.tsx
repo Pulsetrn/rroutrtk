@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 
 function VansHostPage() {
   const [data, setData] = useState<vansResponse[]>([]);
-  // @ts-ignore
   const { data: vansData, isError, isLoading } = useGetVansForHostQuery();
 
   useEffect(() => {
